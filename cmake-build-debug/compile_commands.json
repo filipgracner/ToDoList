@@ -1,0 +1,8 @@
+[
+{
+  "directory": "D:/FERI/PRO II/ToDo List/cmake-build-debug",
+  "command": "\"D:\\Programs\\CLion 2025.3.2\\bin\\mingw\\bin\\g++.exe\" -g -std=gnu++20 -fdiagnostics-color=always -o CMakeFiles\\ToDo_List.dir\\Code\\main.cpp.obj -c \"D:\\FERI\\PRO II\\ToDo List\\Code\\main.cpp\"",
+  "file": "D:/FERI/PRO II/ToDo List/Code/main.cpp",
+  "output": "D:/FERI/PRO II/ToDo List/cmake-build-debug/CMakeFiles/ToDo_List.dir/Code/main.cpp.obj"
+}
+]

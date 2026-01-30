@@ -1,0 +1,3 @@
+D:/FERI/PRO II/ToDo List/cmake-build-debug/CMakeFiles/ToDo_List.dir
+D:/FERI/PRO II/ToDo List/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/FERI/PRO II/ToDo List/cmake-build-debug/CMakeFiles/rebuild_cache.dir
