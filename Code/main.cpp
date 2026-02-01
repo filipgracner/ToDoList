@@ -3,10 +3,6 @@
 
 using namespace std;
 
-
-
-
-
 int main() {
     Task* head = nullptr;
     Task* new_task = nullptr;
@@ -14,7 +10,7 @@ int main() {
     while (true) {
         showMenu();
         int choice = 0;
-        int add = 0;
+        int add = -1;
         cout << "Enter your choice: ";
         cin >> choice;
 
@@ -24,12 +20,21 @@ int main() {
                 exit(1);
                 break;
             case 1:
-                //showTasks(head);
+                showTasks(head);
                 break;
             case 2:
                 new_task = createTask();
-                cout << "Add to the beginning (0) or the end (1)? ";
-                cin >> add;
+                while (add < 0 || add > 1) {
+                    cout << "Add to the beginning (0) or the end (1)? ";
+                    cin >> add;
+                }
+                if (add == 0) {
+                    addToBeginning(head, new_task);
+                    cout << "Added a new task to the beginning." << endl;
+                } else {
+                    addToEnd(head, new_task);
+                    cout << "Added a new task to the end." << endl;
+                }
                 break;
 
             default:
