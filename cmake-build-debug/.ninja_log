@@ -1,5 +1,14 @@
 # ninja log v6
 2	499	7914690996110744	CMakeFiles/ToDo_List.dir/main.cpp.obj	7933fa6df1dbcd65
-501	660	7914691001090722	ToDo_List.exe	4b48baaa4920eadb
-3	595	7914724891457946	CMakeFiles/ToDo_List.dir/Code/main.cpp.obj	c033267e13e2ba1e
-597	716	7914724897390609	ToDo_List.exe	a489e6e2515be8cd
+553	660	7914758905639192	ToDo_List.exe	a489e6e2515be8cd
+15	552	7914758900262769	CMakeFiles/ToDo_List.dir/Code/main.cpp.obj	c033267e13e2ba1e
+14	750	7915727605026021	CMakeFiles/ToDo_List.dir/Code/main.cpp.obj	c033267e13e2ba1e
+17	546	7915729529749076	CMakeFiles/ToDo_List.dir/Code/todo.cpp.obj	f0834dbfc5bd595
+3	489	7915730291026154	CMakeFiles/ToDo_List.dir/Code/main.cpp.obj	c033267e13e2ba1e
+12	488	7915730886646176	CMakeFiles/ToDo_List.dir/Code/main.cpp.obj	c033267e13e2ba1e
+11	508	7915731761422683	CMakeFiles/ToDo_List.dir/Code/main.cpp.obj	c033267e13e2ba1e
+12	470	7915732033609458	CMakeFiles/ToDo_List.dir/Code/main.cpp.obj	c033267e13e2ba1e
+11	500	7915733324613205	CMakeFiles/ToDo_List.dir/Code/main.cpp.obj	c033267e13e2ba1e
+500	601	7915733329505831	ToDo_List.exe	67e6b949fbb3d2b3
+14	515	7915733617648961	CMakeFiles/ToDo_List.dir/Code/main.cpp.obj	c033267e13e2ba1e
+516	614	7915733622666741	ToDo_List.exe	67e6b949fbb3d2b3

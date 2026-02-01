@@ -56,6 +56,13 @@ build CMakeFiles/ToDo_List.dir/Code/main.cpp.obj: CXX_COMPILER__ToDo_List_unscan
   OBJECT_DIR = CMakeFiles\ToDo_List.dir
   OBJECT_FILE_DIR = CMakeFiles\ToDo_List.dir\Code
 
+build CMakeFiles/ToDo_List.dir/Code/todo.cpp.obj: CXX_COMPILER__ToDo_List_unscanned_Debug D$:/FERI/PRO$ II/ToDo$ List/Code/todo.cpp || cmake_object_order_depends_target_ToDo_List
+  CONFIG = Debug
+  DEP_FILE = CMakeFiles\ToDo_List.dir\Code\todo.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\ToDo_List.dir
+  OBJECT_FILE_DIR = CMakeFiles\ToDo_List.dir\Code
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target ToDo_List
@@ -64,7 +71,7 @@ build CMakeFiles/ToDo_List.dir/Code/main.cpp.obj: CXX_COMPILER__ToDo_List_unscan
 #############################################
 # Link the executable ToDo_List.exe
 
-build ToDo_List.exe: CXX_EXECUTABLE_LINKER__ToDo_List_Debug CMakeFiles/ToDo_List.dir/Code/main.cpp.obj
+build ToDo_List.exe: CXX_EXECUTABLE_LINKER__ToDo_List_Debug CMakeFiles/ToDo_List.dir/Code/main.cpp.obj CMakeFiles/ToDo_List.dir/Code/todo.cpp.obj
   CONFIG = Debug
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32

@@ -3,4 +3,6 @@ project(ToDo_List)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(ToDo_List Code/main.cpp)
+add_executable(ToDo_List Code/main.cpp
+        Code/todo.h
+        Code/todo.cpp)
