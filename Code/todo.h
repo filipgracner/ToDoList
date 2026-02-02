@@ -26,6 +26,7 @@ void showTasks(Task* head);
 Task* findId(Task* head, int id);
 bool markDone(Task*& head, int id);
 bool removeTask(Task*& head, int id);
+void bubbleSort(Task*& head);
 void sortByPriority(Task*& head);
 void sortById(Task*& head);
 void sortByName(Task*& head);
