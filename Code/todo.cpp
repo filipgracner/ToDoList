@@ -138,6 +138,17 @@ bool removeTask(Task*& head, int id) {
     }
 }
 
+void clearList(Task*& head) {
+    Task* p = head;
+    while (p != nullptr) {
+        Task* q = p;
+        delete q;
+        q = nullptr;
+        p = p->next;
+    }
+    head = nullptr;
+}
+
 /*void bubbleSort(Task*& head) {
     Task* p = head;
     Task* q = head;

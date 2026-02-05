@@ -64,7 +64,10 @@ int main() {
                     cout << "No task with such ID." << endl;
                 }
                 break;
-
+            case 9:
+                cout << "Clearing the list of tasks ..." << endl;
+                clearList(head);
+                break;
             default:
                 cout << "Invalid input!" << endl;
                 break;
