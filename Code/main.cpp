@@ -64,6 +64,16 @@ int main() {
                     cout << "No task with such ID." << endl;
                 }
                 break;
+            case 5:
+                cout << "Sort by ID (0) / name (1) / description (2) / priority (3): ";
+                cin >> id;
+                bubbleSort(head, id);
+                break;
+            case 6:
+                cout << "Number of all tasks: " << numberOfAll(head) << endl;
+                cout << "Number of completed tasks: " << numberOfDone(head) << endl;
+                cout << "Percentage of done: " << 100*(static_cast<float>(numberOfDone(head))/static_cast<float>(numberOfAll(head))) << endl;
+                break;
             case 9:
                 cout << "Clearing the list of tasks ..." << endl;
                 clearList(head);

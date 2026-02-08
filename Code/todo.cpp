@@ -149,19 +149,75 @@ void clearList(Task*& head) {
     head = nullptr;
 }
 
-/*void bubbleSort(Task*& head) {
+void swapData(Task *&p, Task *&q) {
+    Task* temp = new Task;
+    temp->id = q->id;
+    temp->name = q->name;
+    temp->description = q->description;
+    temp->priority = q->priority;
+
+    q->id = p->id;
+    q->name = p->name;
+    q->description = p->description;
+    q->priority = p->priority;
+
+    p->id = temp->id;
+    p->name = temp->name;
+    p->description = temp->description;
+    p->priority = temp->priority;
+    delete temp;
+    temp = nullptr;
+}
+
+void bubbleSort(Task*& head, const int key) {
     Task* p = head;
     Task* q = head;
-    Task* temp = head;
+
+    if (key < 0 || key > 3) {
+        return;
+    }
 
     while (p->next != nullptr) {
-        while (q->next->next != nullptr) {
-            if (p->priority > q->priority) {
-                temp = p;
+        while (q->next != nullptr) {
+            if (key == 0 && q->id > q->next->id) {
+                swapData(q, q->next);
+            } else if (key == 1 && (q->name) > q->next->name) {
+                swapData(q, q->next);
+            } else if (key == 2 && q->description > q->next->description) {
+                swapData(q, q->next);
+            } else if (key == 3 && q->priority < q->next->priority) {
+                swapData(q, q->next);
             }
+
+            q = q->next;
         }
+        q = head;
+        p = p->next;
     }
-}*/
+}
+
+int numberOfDone(Task *head) {
+    int num = 0;
+    Task* p = head;
+    while (p != nullptr) {
+        if (p->done == true) {
+            num++;
+        }
+        p = p->next;
+    }
+    return num;
+}
+
+int numberOfAll(Task *head) {
+    int num = 0;
+    Task* p = head;
+    while (p != nullptr) {
+        num++;
+        p = p->next;
+    }
+    return num;
+
+}
 
 void showMenu() {
     cout << "---------------TO DO LIST---------------" << endl;
