@@ -7,6 +7,7 @@
 
 #include "todo.h"
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -136,6 +137,7 @@ bool removeTask(Task*& head, int id) {
         p = p->next;
         q = q->next;
     }
+    return false;
 }
 
 void clearList(Task*& head) {
@@ -216,7 +218,81 @@ int numberOfAll(Task *head) {
         p = p->next;
     }
     return num;
+}
 
+void saveToFile(Task *head, std::string file_name) {
+    ofstream output (file_name, ios::out);
+
+    if (!output.good()) {
+        cout << "Writing in file " << file_name << " failed!" << endl;
+        return;
+    }
+
+    Task* p = head;
+    while (p != nullptr) {
+        output << to_string(p->id) << "|"
+        << p->name << "|"
+        << p->description << "|"
+        << to_string(p->priority) << "|"
+        << to_string(p->done) << "|"
+        << "\n";
+        p = p->next;
+    }
+    output.close();
+}
+
+void loadFromFile(Task *&head, std::string file_name) {
+    ifstream input(file_name, ios::in);
+    if (!input.good()) {
+        cout << "Reading from file " << file_name << " failed!" << endl;
+        return;
+    }
+
+    clearList(head);
+    vector<string> data = {};
+    string line;
+    int num_el = 0;
+    string word;
+
+    while (getline(input, line)) {
+        word = "";
+        num_el = 0;
+        data.clear();
+
+        for (int i = 0; i < line.length(); i++) {
+            if (line[i] == '|') {
+                data.push_back(word);
+                word = "";
+                num_el++;
+                continue;
+            }
+            word += line[i];
+        }
+
+        if (!word.empty()) {
+            data.push_back(word);
+        }
+
+        if (data.size() < 5) {
+            cout << "Invalid line format (expected 5 fields, got " << data.size() << "), skipping..." << endl;
+            continue;
+        }
+
+        Task* p = new Task;
+        p->id = stoi(data[0]);
+        p->name = data[1];
+        p->description = data[2];
+        p->priority = stoi(data[3]);
+        if (data[4] == "1") {
+            p->done = true;
+        } else {
+            p->done = false;
+        }
+        p->next = nullptr;
+        addToEnd(head, p);
+    }
+
+    input.close();
 }
 
 void showMenu() {
@@ -228,7 +304,6 @@ void showMenu() {
     cout << "5 - Sort ..." << endl;
     cout << "6 - Statistics" << endl;
     cout << "7 - Save to file" << endl;
-    cout << "8 - Load from file" << endl;
-    cout << "9 - Clear the list of tasks" << endl;
+    cout << "8 - Clear the list of tasks" << endl;
     cout << "0 - Quit" << endl << endl;
 }

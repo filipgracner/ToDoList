@@ -3,32 +3,29 @@
 
 using namespace std;
 
-int main() {
+int main(int argc, char* argv[]) {
     Task* head = nullptr;
-    Task* new_task = new Task;
 
-    new_task->id = 1;
-    new_task->name = "Cleaning";
-    new_task->description = "Whatever";
-    new_task->done = false;
-    new_task->priority = 5;
-    new_task->next = nullptr;
-
-    head = new_task;
+    if (argc > 1) {
+        cout << "Loading TODO list from file ..." << endl;
+        string path = argv[1];
+        loadFromFile(head, path);
+    }
 
     while (true) {
         showMenu();
         int choice = 0;
         int add = -1;
         int id = 0;
+        Task* new_task = nullptr;
+        string file_name = "";
         cout << "Enter your choice: ";
         cin >> choice;
 
         switch (choice) {
             case 0:
                 cout << "Goodbye" << endl;
-                exit(1);
-                break;
+                return 0;
             case 1:
                 showTasks(head);
                 break;
@@ -74,7 +71,12 @@ int main() {
                 cout << "Number of completed tasks: " << numberOfDone(head) << endl;
                 cout << "Percentage of done: " << 100*(static_cast<float>(numberOfDone(head))/static_cast<float>(numberOfAll(head))) << endl;
                 break;
-            case 9:
+            case 7:
+                cout << "Saving to file: " << endl;
+                cin >> file_name;
+                saveToFile(head, file_name);
+                break;
+            case 8:
                 cout << "Clearing the list of tasks ..." << endl;
                 clearList(head);
                 break;
@@ -83,15 +85,4 @@ int main() {
                 break;
         }
     }
-
 }
-
-/*
- * int steviloOpravljenih(Opravilo* head);
- * int steviloNeopravljenih(Opravilo* head);
- * bool shraniVDatoteko(Opravilo* head, const string& imeDatoteke);
- * id|naslov|opis|prioriteta|opravljeno
- * bool naloziIzDatoteke(Opravilo*& head, const string& imeDatoteke);
- * void pocistiSeznam(Opravilo*& head);
- * void izpisiMeni();
- */
