@@ -157,16 +157,19 @@ void swapData(Task *&p, Task *&q) {
     temp->name = q->name;
     temp->description = q->description;
     temp->priority = q->priority;
+    temp->done = q->done;
 
     q->id = p->id;
     q->name = p->name;
     q->description = p->description;
     q->priority = p->priority;
+    q->done = p->done;
 
     p->id = temp->id;
     p->name = temp->name;
     p->description = temp->description;
     p->priority = temp->priority;
+    p->done = temp->done;
     delete temp;
     temp = nullptr;
 }
